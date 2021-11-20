@@ -208,9 +208,9 @@ $preference->save();
                                                         id: '<?php echo $preference->id ?>'
                                                     },
                                                     
-                                                    autoOpen: true,
+                                                    // autoOpen: true,
                                                     render: {
-                                                        container: '#cho-container', // Indicates the name of the class where the payment button will be displayed
+                                                        container: '#checkout_button', // Indicates the name of the class where the payment button will be displayed
                                                         label: 'Pagar la compra', // Changes the button label (optional)
                                                     }
                                                 });
@@ -227,8 +227,8 @@ $preference->save();
                                             <?php echo "$" . $_POST['unit'] ?>
                                         </h3>
                                     </div>
-                                    <div class=".cho-container"></div>
-                                    <div id="cho-container"></div>
+                                    
+                                    <div id="checkout_button"></div>
                                 </div>
                             </div>
                         </div>
