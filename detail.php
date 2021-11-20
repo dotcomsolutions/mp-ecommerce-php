@@ -93,7 +93,7 @@ $preference->save();
             id: '<?php echo $preference->id ?>'
         },
         render: {
-            container: '.cho-container', // Indicates the name of the class where the payment button will be displayed
+            container: 'cho-container', // Indicates the name of the class where the payment button will be displayed
             label: 'Pagar la compra', // Changes the button label (optional)
         }
 });
@@ -221,7 +221,7 @@ $preference->save();
                                             <?php echo "$" . $_POST['unit'] ?>
                                         </h3>
                                     </div>
-                                    <div class=".cho-container"></div>
+                                    <div class="cho-container"></div>
                                 </div>
                             </div>
                         </div>
