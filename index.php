@@ -18,7 +18,7 @@ MercadoPago\SDK::setAccessToken('APP_USR-1159009372558727-072921-8d0b9980c749498
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
 
-    <script src=“https://www.mercadopago.com/v2/security.js” view=“home”></script>
+    <script src="https://www.mercadopago.com/v2/security.js" view="item"></script>
     
     <script src="https://sdk.mercadopago.com/js/v2"></script>
 

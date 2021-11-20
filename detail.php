@@ -75,7 +75,7 @@ $preference->save();
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
     
-    <script src=“https://www.mercadopago.com/v2/security.js” view=“item”></script>
+    <script src="https://www.mercadopago.com/v2/security.js" view="item"></script>
     
     <script src="https://sdk.mercadopago.com/js/v2"></script>
     
@@ -93,7 +93,7 @@ $preference->save();
             id: '<?php echo $preference->id ?>'
         },
         render: {
-            container: 'cho-container', // Indicates the name of the class where the payment button will be displayed
+            container: '.cho-container', // Indicates the name of the class where the payment button will be displayed
             label: 'Pagar la compra', // Changes the button label (optional)
         }
 });
