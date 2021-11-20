@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+// Mercado Pago SDK
+require __DIR__ .  '/vendor/autoload.php';
+// Add Your credentials
+MercadoPago\SDK::setAccessToken('APP_USR-1159009372558727-072921-8d0b9980c7494985a5abd19fbe921a3d-617633181');
+?>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=1024">
@@ -13,6 +19,8 @@
     crossorigin="anonymous"></script>
 
     <script src=“https://www.mercadopago.com/v2/security.js” view=“home”></script>
+    
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
 
     <link rel="stylesheet" href="./assets/category-landing.css" media="screen, print">
 

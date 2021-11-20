@@ -1,4 +1,67 @@
 <!DOCTYPE html>
+<?php
+// Mercado Pago SDK
+require __DIR__ .  '/vendor/autoload.php';
+// Add Your credentials
+MercadoPago\SDK::setAccessToken('APP_USR-1159009372558727-072921-8d0b9980c7494985a5abd19fbe921a3d-617633181');
+
+
+MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
+
+
+$preference = new MercadoPago\Preference();
+
+// Create a preference item
+$item = new MercadoPago\Item();
+$item->title = $_POST['title'];
+$item->quantity = $_POST['unit'] ;
+$item->unit_price = $_POST['price'];
+$preference->items = array($item);
+
+
+
+$preference->back_urls = array(
+    "success" => "https://dotcomsolution-mp-commerce-php.herokuapp.com/success.php",
+    "failure" => "https://dotcomsolution-mp-commerce-php.herokuapp.com/failure.php",
+    "pending" => "https://dotcomsolution-mp-commerce-php.herokuapp.com/pending.php"
+);
+$preference->auto_return = "approved";
+
+$preference->payment_methods = array(
+  "excluded_payment_methods" => array(
+    array("id" => "amex")
+  ),
+  "excluded_payment_types" => array(
+    array("id" => "atm")
+  ),
+  "installments" => 6
+);
+
+
+$payer = new MercadoPago\Payer();
+  $payer->name = "Lalo";
+  $payer->surname = "Landa";
+  $payer->email = "test_user_81131286@testuser.com";
+  $payer->date_created = "2018-06-02T12:58:41.425-04:00";
+  $payer->phone = array(
+    "area_code" => "11",
+    "number" => "22223333"
+  );
+  
+  $payer->address = array(
+    "street_name" => "Falsa",
+    "street_number" => 123,
+    "zip_code" => "1111"
+  );
+
+
+
+$preference->save();
+
+
+
+
+?>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=1024">
@@ -13,6 +76,28 @@
     crossorigin="anonymous"></script>
     
     <script src=“https://www.mercadopago.com/v2/security.js” view=“item”></script>
+    
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    
+    
+    
+    <script>
+
+    // Initialize the checkout
+    mp.checkout({
+        preference: {
+            id: '<?php echo $preference->id ?>'
+        },
+        render: {
+            container: '.cho-container', // Indicates the name of the class where the payment button will be displayed
+            label: 'Pagar la compra', // Changes the button label (optional)
+        }
+});
+</script>
+    
+    
+    
+    
 
     <link rel="stylesheet" href="./assets/category-landing.css" media="screen, print">
 
@@ -132,7 +217,7 @@
                                             <?php echo "$" . $_POST['unit'] ?>
                                         </h3>
                                     </div>
-                                    <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
+                                    <div class="cho-container"></div>
                                 </div>
                             </div>
                         </div>
