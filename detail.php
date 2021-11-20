@@ -195,31 +195,6 @@ $preference->save();
 
                                             </h3>
                                         </div>
-                                        
-                                            <script>
-                                                // Add the SDK credentials
-                                                const mp = new MercadoPago('TEST-fa1021a8-7141-460d-bb8c-1bcc31f54a60', {
-                                                        locale: 'es-AR'
-                                                });
-                                              
-                                                // Initialize the checkout
-                                                mp.checkout({
-                                                    preference: {
-                                                        id: '<?php echo $preference->id ?>'
-                                                    },
-                                                    
-                                                    // autoOpen: true,
-                                                    render: {
-                                                        container: '#button-checkout', // Class name where the payment button will be displayed
-                                                        label: 'Pay', // Change the payment button text (optional)
-                                                    }
-                                                });
-                                            </script>
-                                        
-                                        
-                                        
-                                        
-                                        
                                         <h3 >
                                             <?php echo $_POST['price'] ?>
                                         </h3>
@@ -229,6 +204,26 @@ $preference->save();
                                     </div>
                                     
                                     <div id="button-checkout"></div>
+                                    
+                                    <script>
+                                        // Add the SDK credentials
+                                        const mp = new MercadoPago('TEST-fa1021a8-7141-460d-bb8c-1bcc31f54a60', {
+                                                locale: 'es-AR'
+                                        });
+                                      
+                                        // Initialize the checkout
+                                        mp.checkout({
+                                            preference: {
+                                                id: '<?php echo $preference->id ?>'
+                                            },
+                                            
+                                            // autoOpen: true,
+                                            render: {
+                                                container: '#button-checkout', // Class name where the payment button will be displayed
+                                                label: 'Pay', // Change the payment button text (optional)
+                                            }
+                                        });
+                                    </script>
                                 </div>
                             </div>
                         </div>
