@@ -208,7 +208,7 @@ $preference->save();
                                                         id: '<?php echo $preference->id ?>'
                                                     },
                                                     
-                                                    //autoOpen: true,
+                                                    autoOpen: true,
                                                     render: {
                                                         container: '#cho-container', // Indicates the name of the class where the payment button will be displayed
                                                         label: 'Pagar la compra', // Changes the button label (optional)
