@@ -4,10 +4,7 @@
 require __DIR__ .  '/vendor/autoload.php';
 // Add Your credentials
 MercadoPago\SDK::setAccessToken('APP_USR-1159009372558727-072921-8d0b9980c7494985a5abd19fbe921a3d-617633181');
-
-
 MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
-
 
 $preference = new MercadoPago\Preference();
 
@@ -84,7 +81,7 @@ $preference->save();
     <script>
     // Add the SDK credentials
     const mp = new MercadoPago('TEST-fa1021a8-7141-460d-bb8c-1bcc31f54a60', {
-            locale: 'en-US'
+            locale: 'es-AR'
     });
   
     // Initialize the checkout
@@ -93,7 +90,7 @@ $preference->save();
             id: '<?php echo $preference->id ?>'
         },
         render: {
-            container: '.cho-container', // Indicates the name of the class where the payment button will be displayed
+            container: '#cho-container', // Indicates the name of the class where the payment button will be displayed
             label: 'Pagar la compra', // Changes the button label (optional)
         }
 });
@@ -222,6 +219,7 @@ $preference->save();
                                         </h3>
                                     </div>
                                     <div class=".cho-container"></div>
+                                    <div id="cho-container"></div>
                                 </div>
                             </div>
                         </div>
