@@ -221,7 +221,7 @@ $preference->save();
                                             <?php echo "$" . $_POST['unit'] ?>
                                         </h3>
                                     </div>
-                                    <div class="cho-container"></div>
+                                    <div class=".cho-container"></div>
                                 </div>
                             </div>
                         </div>
