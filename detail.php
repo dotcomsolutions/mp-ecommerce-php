@@ -210,8 +210,8 @@ $preference->save();
                                                     
                                                     // autoOpen: true,
                                                     render: {
-                                                        container: '#checkout_button', // Indicates the name of the class where the payment button will be displayed
-                                                        label: 'Pagar la compra', // Changes the button label (optional)
+                                                        container: '#button-checkout', // Class name where the payment button will be displayed
+                                                        label: 'Pay', // Change the payment button text (optional)
                                                     }
                                                 });
                                             </script>
@@ -228,7 +228,7 @@ $preference->save();
                                         </h3>
                                     </div>
                                     
-                                    <div id="checkout_button"></div>
+                                    <div id="button-checkout"></div>
                                 </div>
                             </div>
                         </div>
