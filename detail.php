@@ -82,7 +82,11 @@ $preference->save();
     
     
     <script>
-
+    // Add the SDK credentials
+    const mp = new MercadoPago('TEST-fa1021a8-7141-460d-bb8c-1bcc31f54a60', {
+            locale: 'en-US'
+    });
+  
     // Initialize the checkout
     mp.checkout({
         preference: {
