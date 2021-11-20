@@ -79,22 +79,24 @@ $preference->save();
     
     
     <script>
-    // Add the SDK credentials
-    const mp = new MercadoPago('TEST-fa1021a8-7141-460d-bb8c-1bcc31f54a60', {
-            locale: 'es-AR'
-    });
-  
-    // Initialize the checkout
-    mp.checkout({
-        preference: {
-            id: '<?php echo $preference->id ?>'
-        },
-        render: {
-            container: '#cho-container', // Indicates the name of the class where the payment button will be displayed
-            label: 'Pagar la compra', // Changes the button label (optional)
-        }
-});
-</script>
+        // Add the SDK credentials
+        const mp = new MercadoPago('TEST-fa1021a8-7141-460d-bb8c-1bcc31f54a60', {
+                locale: 'es-AR'
+        });
+      
+        // Initialize the checkout
+        mp.checkout({
+            preference: {
+                id: '<?php echo $preference->id ?>'
+            },
+            
+            autoOpen: true,
+            // render: {
+            //     container: '#cho-container', // Indicates the name of the class where the payment button will be displayed
+            //     label: 'Pagar la compra', // Changes the button label (optional)
+            // }
+        });
+    </script>
     
     
     
