@@ -27,6 +27,12 @@ switch($_POST["type"]) {
         echo json_response("200", "OK");
         file_put_contents("./$invoice.json", $json);
         break;
+    default:
+        $json = file_get_contents("php://input");
+        echo json_response("200", "OK");
+        file_put_contents("./respuesta.json", $json);
+        break;
+        
 }
 
 
