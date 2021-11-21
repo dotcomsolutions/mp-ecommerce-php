@@ -31,12 +31,12 @@ switch($_POST["type"]) {
         $json = file_get_contents("php://input");
         echo json_response("200", "OK");
         file_put_contents("./respuesta.json", $json);
-        file_put_contents("./respuesta.json", "Carlos");
         break;
         
 }
 
-
+$json = file_get_contents("php://input");
+file_put_contents("respuesta.json", $json);
 
 
 
