@@ -19,19 +19,7 @@ $item->picture_url = $domain.$img;
 $item->description = "Dispositivo móvil de Tienda e-commerce";
 $item->unit_price = $_POST['price'];
 $preference->items = array($item);
-$payer = new MercadoPago\Payer();
-  $payer->name = "Lalo";
-  $payer->surname = "Landa";
-  $payer->email = "test_user_81131286@testuser.com";
-  $payer->phone = array(
-    "area_code" => "11",
-    "number" => "22223333"
-  );
-  $payer->address = array(
-    "street_name" => "Falsa",
-    "street_number" => "123",
-    "zip_code" => "1111"
-  );
+
 $preference->external_reference = "carlos.ruiz@dotcomsolutions.com.mx";
 
 $preference->back_urls = array(
@@ -59,7 +47,26 @@ $preference->payment_methods = array(
 
 
 
+$payer = new MercadoPago\Payer();
+  $payer->name = "Lalo";
+  $payer->surname = "Landa";
+  $payer->email = "test_user_81131286@testuser.com";
+  $payer->phone = array(
+    "area_code" => "11",
+    "number" => "22223333"
+  );
+  $payer->address = array(
+    "street_name" => "Falsa",
+    "street_number" => "123",
+    "zip_code" => "1111"
+  );
+  
+  $preference->payer = $payer;
+
 $preference->save();
+
+
+
 ?>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
@@ -77,14 +84,6 @@ $preference->save();
     <script src="https://www.mercadopago.com/v2/security.js" view="item"></script>
     
     <script src="https://sdk.mercadopago.com/js/v2"></script>
-    
-    
-    
-
-    
-    
-    
-    
 
     <link rel="stylesheet" href="./assets/category-landing.css" media="screen, print">
 
@@ -229,7 +228,7 @@ $preference->save();
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> 
                 </div>
             </div>
         </div>
