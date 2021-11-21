@@ -35,10 +35,6 @@ switch($_POST["type"]) {
         
 }
 
-$json = file_get_contents("php://input");
-file_put_contents("respuesta.json", $json);
-
-
 
 
 function json_response($code = 200, $message = null)

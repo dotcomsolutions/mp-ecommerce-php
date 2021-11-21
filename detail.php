@@ -10,21 +10,31 @@ $preference = new MercadoPago\Preference();
 
 // Create a preference item
 $item = new MercadoPago\Item();
+$item->id = 1234;
 $item->title = $_POST['title'];
-$item->quantity = $_POST['unit'] ;
+$item->quantity = 1;
+
+$domain = "http://50.18.9.36/Mercado_Pago/mp-ecommerce-php";
+$img = substr($_POST['img'], 1);
+$item->picture_url = $domain.$img;
+$item->description = "Dispositivo móvil de Tienda e-commerce";
 $item->unit_price = $_POST['price'];
 $preference->items = array($item);
 
-
+$preference->external_reference = "carlos.ruiz@dotcomsolutions.com.mx";
 
 $preference->back_urls = array(
-    "success" => "https://dotcomsolution-mp-commerce-php.herokuapp.com/success.php",
-    "failure" => "https://dotcomsolution-mp-commerce-php.herokuapp.com/failure.php",
-    "pending" => "https://dotcomsolution-mp-commerce-php.herokuapp.com/pending.php"
+    // "success" => "https://dotcomsolution-mp-commerce-php.herokuapp.com/success.php",
+    // "failure" => "https://dotcomsolution-mp-commerce-php.herokuapp.com/failure.php",
+    // "pending" => "https://dotcomsolution-mp-commerce-php.herokuapp.com/pending.php"
+    "success" => "http://50.18.9.36/Mercado_Pago/mp-ecommerce-php/success.php",
+    "failure" => "http://50.18.9.36/Mercado_Pago/mp-ecommerce-php/failure.php",
+    "pending" => "http://50.18.9.36/Mercado_Pago/mp-ecommerce-php/pending.php"
+    
 );
 $preference->auto_return = "approved";
 
-$preference->notification_url = "https://dotcomsolution-mp-commerce-php.herokuapp.com/notification.php?source_news=webhooks";
+$preference->notification_url = "http://50.18.9.36/Mercado_Pago/mp-ecommerce-php/notification.php?source_news=webhooks";
 
 $preference->payment_methods = array(
   "excluded_payment_methods" => array(
@@ -46,20 +56,12 @@ $payer = new MercadoPago\Payer();
     "area_code" => "11",
     "number" => "22223333"
   );
-  
   $payer->address = array(
     "street_name" => "Falsa",
     "street_number" => 123,
     "zip_code" => "1111"
   );
-
-
-
 $preference->save();
-
-
-
-
 ?>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
