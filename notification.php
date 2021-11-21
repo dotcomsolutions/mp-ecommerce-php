@@ -7,7 +7,7 @@ switch($_POST["type"]) {
         $payment = MercadoPago\Payment::find_by_id($_POST["data"]["id"]);
         $json = file_get_contents("php://input");
         echo json_response("200", "OK");
-        file_put_contents("./$payment.json", $json);
+        file_put_contents("pago.json", $json);
         break;
     case "plan":
         $plan = MercadoPago\Plan::find_by_id($_POST["data"]["id"]);
