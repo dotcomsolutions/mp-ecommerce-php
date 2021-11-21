@@ -222,7 +222,7 @@ $preference->save();
                                             // autoOpen: true,
                                             render: {
                                                 container: '#button-checkout', // Class name where the payment button will be displayed
-                                                label: 'Pay', // Change the payment button text (optional)
+                                                label: 'Pagar la compra', // Change the payment button text (optional)
                                             }
                                         });
                                     </script>
