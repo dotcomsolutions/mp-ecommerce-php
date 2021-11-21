@@ -24,6 +24,8 @@ $preference->back_urls = array(
 );
 $preference->auto_return = "approved";
 
+$preference->notification_url = "https://dotcomsolution-mp-commerce-php.herokuapp.com/notification.php?source_news=webhooks";
+
 $preference->payment_methods = array(
   "excluded_payment_methods" => array(
     array("id" => "amex")
